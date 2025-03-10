@@ -4,10 +4,10 @@ name: Build image and push to Github Container Registry
 on:
   push:
     branches:
-      - main
+      - HEAD
   pull_request:
     branches:
-      - main
+      - HEAD
 
 permissions:
   contents: read
@@ -42,7 +42,7 @@ jobs:
         with:
           context: .
           push: ${{ github.event_name == 'push' &&
-              github.ref == 'refs/heads/main' }}
+              github.ref == 'refs/heads/HEAD' }}
           tags: |
             ${{ github.repository  }}:${{ steps.vars.outputs.sha_short }}
             ${{ github.repository }}:latest
