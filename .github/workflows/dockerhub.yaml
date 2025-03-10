@@ -76,10 +76,9 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
-          push: ${{ github.event_name == 'push' && 
-            github.ref == 'refs/heads/master' &&
-            github.repository_owner == 'mehr74'
-            }}
+          push: ${{ github.event_name == 'push' &&
+              github.ref == 'refs/heads/master' &&
+              github.repository_owner == 'mehr74' }}
           platforms: linux/arm/v7,linux/arm64/v8,linux/amd64
           tags: |
             ${{ github.repository }}:${{ steps.vars.outputs.sha_short }}
