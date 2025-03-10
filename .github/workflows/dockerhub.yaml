@@ -25,17 +25,6 @@ jobs:
         with:
           go-version: 1.23
 
-
-    
-        
-          
-    
-
-        
-        Expand All
-    
-    @@ -36,48 +36,46 @@ jobs:
-  
       # Build the application
       - name: Build Go Application
         run: |
