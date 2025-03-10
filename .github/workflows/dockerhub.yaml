@@ -53,6 +53,7 @@ jobs:
 
       # Set the Docker image version
       - name: Set docker version
+        id: vars
         run: |
           [[ "${{ github.ref_type }}" == "tag" ]] && VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,;s/^v//')
           echo "version=${VERSION:-latest}" >> $GITHUB_OUTPUT
